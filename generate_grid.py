@@ -10,17 +10,17 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
-from itertools import combinations,product
+from itertools import combinations, product
 
 
 # In[2]:
 
 
-#star = "teststar"
+# star = "teststar"
 star = str(sys.argv[1])
 
-stardir = './stars/'+star+'/'
-inf_name = stardir + 'input.py'
+stardir = "./stars/" + star + "/"
+inf_name = stardir + "input.py"
 
 exec(open(inf_name).read())
 
@@ -31,16 +31,18 @@ exec(open(inf_name).read())
 params = pd.DataFrame()
 
 
-listOLists =  [grid["max_nr_of_specs"],
-               grid["velgridwidth"],
-               grid["telluric_cut"],
-               grid["mindepthparam"],
-               grid["maxdepthparam"],
-               grid["modelspecdeviationcut"],
-               grid["exclwidelinesparam"],
-               grid["telloption"],
-               grid["erroption"],
-               grid["rassoption"]]
+listOLists = [
+    grid["max_nr_of_specs"],
+    grid["velgridwidth"],
+    grid["telluric_cut"],
+    grid["mindepthparam"],
+    grid["maxdepthparam"],
+    grid["modelspecdeviationcut"],
+    grid["exclwidelinesparam"],
+    grid["telloption"],
+    grid["erroption"],
+    grid["rassoption"],
+]
 
 
 # In[4]:
@@ -51,18 +53,18 @@ em = np.zeros((np.prod([len(l) for l in listOLists])))
 count = 0
 
 for keyword in grid.keys():
-    params[keyword] = em    
-    
+    params[keyword] = em
+
 for paramlist in product(*listOLists):
 
-    for cn,keyword in enumerate(grid.keys()):
-        if cn<len(listOLists):
-            params[keyword][count] = paramlist[cn] 
-    count+=1     
-                                            
-params.to_csv('./stars/'+star+'/params.csv',index=False)
+    for cn, keyword in enumerate(grid.keys()):
+        if cn < len(listOLists):
+            params[keyword][count] = paramlist[cn]
+    count += 1
 
-print(params.shape,count)
+params.to_csv("./stars/" + star + "/params.csv", index=False)
+
+print(params.shape, count)
 count_later = np.copy(count)
 
 
@@ -81,14 +83,13 @@ results["DRS RV MAD"] = []
 results["sigmafit_used"] = []
 results["comp time"] = []
 
-results.to_csv(resdir+f"results_{star}_{indic}.csv",index=False)
+results.to_csv(resdir + f"results_{star}_{indic}.csv", index=False)
 
 
 # In[27]:
 
 
-if os.path.exists(rvresfile): 
+if os.path.exists(rvresfile):
     os.remove(rvresfile)
     os.remove(rverrresfile)
     os.remove(commonprofilefile)
-
