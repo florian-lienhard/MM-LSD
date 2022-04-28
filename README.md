@@ -9,7 +9,7 @@ Multi-Mask Least-Squares Deconvolution
 ## Paper
 ### F. Lienhard, A. Mortier, L. Buchhave, A. Collier Cameron, M. López-Morales, A. Sozzetti, C. A. Watson, R. Cosentino
 
-###https://doi.org/10.1093/mnras/stac1098
+### [Lienhard et al. 2022](https://doi.org/10.1093/mnras/stac1098)
 
 
 
