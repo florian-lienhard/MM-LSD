@@ -1,9 +1,9 @@
-# MM-LSD-dev
+# MM-LSD
 
 Multi-Mask Least-Squares Deconvolution
 
 #### email:  fl386_at_cam.ac.uk
-#### First Version 27 April 2022
+#### First Version 28 April 2022
 
 
 ## Paper
@@ -20,7 +20,7 @@ Multi-Mask Least-Squares Deconvolution
 * Mask and partially correct telluric lines.
 * Extract RVs from spectra using Least-Squares Deconvolution using MM-LSD technique described in Lienhard et al. 2022.
 
-#### Check MM-LSD [wiki](https://github.com/florian-lienhard/MM-LSD-dev/wiki)
+#### Check MM-LSD [wiki](https://github.com/florian-lienhard/MM-LSD/wiki)
 
 
 
