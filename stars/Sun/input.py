@@ -48,7 +48,7 @@ resdir = stardir+f"results_{indic}/"
 rassine_loc = rt + "/Rassine_public-master"
 
 #location of data
-datadir = rt + "/MM-LSD-dev/data/"
+datadir = rt + "/MM-LSD/data/"
 
 #your targets data
 maindir = datadir + star
